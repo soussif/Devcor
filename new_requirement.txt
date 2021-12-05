@@ -1,0 +1,13 @@
+bandit==1.7.1
+brotlipy==0.7.0
+certifi==2021.10.8
+click==8.0.3
+gitdb==4.0.9
+GitPython==3.1.24
+pbr==5.8.0
+pytest==6.2.4
+PyYAML==6.0
+smmap==5.0.0
+stevedore==3.5.0
+urllib3==1.26.7
+xmltodict==0.12.0

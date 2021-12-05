@@ -7,7 +7,7 @@ LABEL maintainer="soussif@gmail.com"
 # Shell commands to execute after basic Python 3.7 container
 # is deployed. We only need to install flash for this app.
 RUN apk add --no-cache mariadb-dev build-base && \
-    pip install requests flask SQLAlchemy==1.4.22 mysqlclient==2.0.3 xmltodict
+    pip install requests flask SQLAlchemy==1.4.22 mysqlclient==2.0.3 xmltodict flask_wtf bs4
 
 # Change into the correct directory. WORKDIR is the Docker best practice
 # versus "RUN cd /src" as it is cleaner and more explicit.
