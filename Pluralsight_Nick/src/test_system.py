@@ -37,7 +37,7 @@ def test_get_good_page(kwargs):
     #     assert "Enter account ID" in resp.text
 
 
-def test_get_bad_page():
+def test_get_bad_page(kwargs):
     """
     Simulate a user navigating to an invalid URL with an HTTP GET.
     """
@@ -54,7 +54,7 @@ def test_get_bad_page():
     #     assert "Not Found" in resp.text
 
 
-def test_post_good_acct():
+def test_post_good_acct(kwargs):
     """
     Simulate a user entering a valid account number and clicking "Submit".
     """
@@ -64,7 +64,7 @@ def test_post_good_acct():
     # _post_acct({"acctid": "ACCT100", "acctbal": "40.00 USD"})
 
 
-def test_post_bad_acct():
+def test_post_bad_acct(kwargs):
     """
     Simulate a user entering an invalid account number and clicking "Submit".
     """

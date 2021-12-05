@@ -1,5 +1,6 @@
 flask
 requests
 pytest
+bandit
 mysqlclient
 SQLAlchemy

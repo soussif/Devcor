@@ -4,8 +4,6 @@
 FROM python:3.7.3-alpine
 LABEL maintainer="soussif@gmail.com"
 
-RUN chown dockuser:dockuser -R /app/
-
 # Shell commands to execute after basic Python 3.7 container
 # is deployed. We only need to install flash for this app.
 RUN apk add --no-cache mariadb-dev build-base && \

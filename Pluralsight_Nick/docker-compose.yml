@@ -11,7 +11,7 @@ services:
     build: "."
     image: "flask:latest"
     ports:
-      - "5001:5000/tcp"
+      - "5000:5000/tcp"
 
   db:
     image: "mysql:latest"
