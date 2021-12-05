@@ -1,0 +1,39 @@
+docker
+sudo docker image ls
+sudo docker container run --publish 5001:5000/tcp --mount type=bind,source="$(pwd)/src", targer=/src crm:latest
+
+docker container rm 
+docker-compose.yml
+service:
+   crml:
+      build: "."
+	  image: "crm:latest"
+	  port:
+	     - "5001:5000/tcp"
+      volumes:
+	     - type: "bind"
+		   source: "./src"
+		   target: "/src"
+		   
+
+sudo docker-compose rm -f
+sudo docker-compose pull
+docker-compose up
+sudo docker system prune
+sudo docker-compose up --force-recreate
+sudo docker-compose up --build 
+sudo apt-get install python3
+sudo pip install --upgrade pip
+sudo apt install -y python3-pip
+
+
+sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000\n
+sudo vmhgfs-fuse .host:/ /mnt/ -o allow_other -o uid=1000\n
+sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000\n
+   
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/git
+git clone https://github.com/zsh-users/git.git.git $ZSH_CUSTOM/plugins/git.git
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k\n
+git clone https://github.com/esc/conda-zsh-completion.git $ZSH_CUSTOM/plugins/conda-zsh-completion
