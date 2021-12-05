@@ -1,0 +1,32 @@
+---
+# use python 3.7 venv, per travis xenial must be used for python 3.7 or newer
+dist: "xenial"
+language: "python"
+python:
+  - "3.7"
+# need docker and docker-compose support
+services:
+  - "docker"
+
+#install required packages
+install:
+  - "pip install -r requirement.txt"
+  - "src/./make_cert.sh"
+
+# Before script phase
+before_script:
+  - "pylint src/*.py"
+  - "bandit src/*.py --skip B101"
+  - "pytest --verbose src/test_unit.py""
+  - "docker-compose up --detach"
+  - "docker container ls"
+  - "./wait_for_https.sh 60"
+
+#run the system tests
+script:
+  - "pytest --verbose src/test_system.py"
+
+# tear down containers
+after_script:
+  - "docker-compose down --volumes"
+---
