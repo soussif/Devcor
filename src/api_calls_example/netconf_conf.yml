@@ -1,0 +1,23 @@
+---
+- name: Create loopback payload from template
+  hosts: sandbox
+  connection: local
+
+  tasks:
+    - name: Create template
+      which_items: "{{local_loopback}}"
+      template: src="files/ietf_interface.j2" dest="./output.json"
+
+    - name: Create loopbacks with RESTCONF
+      which_items: "{{local_loopback}}"
+      restconf_config:
+        methos: post
+        format: json
+        path: /data/ietf-interfaces:interfaces
+        # content: "{{new_loop | to_json}}"
+        content: "{{ lookup('file', './output.json') | string}}"
+      register: results
+      ignore_errors: true
+
+    - name: print output
+      debug: msg="{{results}}"

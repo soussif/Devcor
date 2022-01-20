@@ -20,6 +20,6 @@ This module introduced linting, unit tests, and system tests.
 The course demonstrated Travis CI at a high-level to illustrate how
 all the pieces fit together. The `.travis.yml` file contains the "script"
 that Travis will follow upon every `git push` or pull request (PR)
-operation. 
+operation.
 
 > Note: Added to trigger a new build
