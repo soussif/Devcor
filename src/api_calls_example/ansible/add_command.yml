@@ -1,0 +1,19 @@
+---
+- name: Add Loopback
+  hosts: sandbox
+  connection: local
+  tasks:
+    - name: Add Loopback55
+        provider:
+        host: iox-xe-mgmt-latest.cisco.com
+        port: 8181
+        authorize: yes
+        username: developer
+        password: C1sco12345
+      ios_config:
+        parents: int loopback55
+        lines:
+        - ip address 110.25.66.1 255.255.255.0
+        - no shut
+        before:
+        - int loopback55

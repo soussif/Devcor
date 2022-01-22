@@ -1,0 +1,20 @@
+---
+- name: Gather IOS-XE Facts
+  hosts: sandbox
+  connection: local
+  tasks:
+    - name: gather IOS Facts
+      ios facts:
+      provider:
+        host: iox-xe-mgmt-latest.cisco.com
+        port: 8181
+        username: root
+        password: Cisco12345
+
+    - name: What is the IOS OS ver?
+      debug:
+        var: ansible_net_version
+
+    - name: Wha is the hostname?
+      debug:
+        var: ansible_net_hostname
